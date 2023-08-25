@@ -1,0 +1,11 @@
+.greetings {
+    @include contentPaddingInline;
+    &__content {
+        display: flex;
+        justify-content: center;
+        &-image {
+            @include greetingsImageSize;
+            width: 85%;
+        }
+    }
+}

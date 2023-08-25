@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="page">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block icon %}
+        {% endblock %}
+
+        {% block style %}
+        {% endblock %}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+        {% block js%}
+        {% endblock %}
+        {% block page_title %}
+        {% endblock %}
+    </head>
+
+    <body class="page__body">
+        <a href="{% static 'main/src/images/telegram-logo.svg' %}" class="telegram-link"></a>
+
+        <header class="page__header header">
+            <div class="header__content">
+                {% block logo %}
+                {% endblock %}
+                <div class="header__router">
+                    {% block links %}
+                    {% endblock %}
+                </div>
+
+                <div class="menu">
+                    <a href="#menu-mobile" class="menu__button">
+                        <img src="{% static 'main/src/images/icon-menu.svg' %}" alt="icon-menu" class="menu__icon">
+                    </a>
+
+                    <nav class="nav menu__nav">
+                        <ul class="nav__list">
+                            {% block menu %}
+                            {% endblock %}
+
+                            {% block work %}
+                            {% endblock %}
+                        </ul>
+                    </nav>
+                </div>
+
+                <aside class="page__menu--mobile menu--mobile" id="menu-mobile">
+                    <nav class="nav menu--mobile__nav">
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a href="#about" class="nav__link">Про нас</a>
+                            </li>
+
+                            <li class="nav__item">
+                                <a href="#services" class="nav__link">Послуги</a>
+                            </li>
+
+                            <li class="nav__item">
+                                <a href="#contact" class="nav__link">Контакти</a>
+                            </li>
+
+                            <li class="nav__item">
+                                <a href="" class="nav__link">Робота</a>
+                            </li>
+                        </ul>
+
+                        <a href="#" class="menu__button--close">
+                            <img src="{% static 'main/src/images/icon-close.svg' %}" alt="icon-close" class="menu__icon">
+                        </a>
+                    </nav>
+                </aside>
+            </div>
+        </header>
+
+        <main class="main">
+        {% block main %}
+        {% endblock %}
+        </main>
+    </body>
+    <footer class="footer">
+        
+        <nav class="nav menu__nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">Про нас</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="#services" class="nav__link">Послуги</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">Контакти</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="" class="nav__link">Робота</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</html>

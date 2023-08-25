@@ -1,0 +1,30 @@
+.menu {
+    &__icon {
+        @include onDesktop {
+            display: none;
+        }
+    }
+
+    &__nav {
+        display: none;
+         @include onDesktop {
+            display: block;
+         }
+    }
+
+    &--mobile {
+        @include contentPaddingInline;
+        background-color: white;
+        
+        &__nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-self: center;
+          }
+    }
+
+    &__button--close {
+        align-self: center;
+    }
+}

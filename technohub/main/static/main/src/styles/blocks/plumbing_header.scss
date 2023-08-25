@@ -1,0 +1,54 @@
+.header {
+  position: relative;
+
+  @include headerSizing;
+
+  &__content {
+    @include contentPaddingInline;
+    
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    @include headerSizing;
+  }
+
+  &__router {
+    @include TextSizing;
+    display: flex;
+    flex: row;
+    align-items: center;
+    &--plumbing {
+      border-radius: 24px 0 0 24px;
+      @include router-color($accent-color);
+      &:hover {
+        border: 3px solid $accent-color;
+        background-color: #fff;
+        color: $accent-color;
+      }
+    }
+    &--electricity {
+      border-radius: 0 24px 24px 0;
+      @include router-color(#1C2734);
+      &:hover {
+        border: 3px solid #1C2734;
+        background-color: #fff;
+        color: #1C2734;
+      } 
+    }
+  }
+
+  &::after {
+    content: '';
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    display: block;
+    bottom: -2px;
+    height: 2px;
+  }
+}

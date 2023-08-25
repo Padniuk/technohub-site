@@ -1,0 +1,79 @@
+.about {
+    @include contentPaddingInline;
+    @include aboutHeight(false);
+    &__content {
+        @include aboutResize;
+        position: relative;
+        @keyframes display {
+            0% {
+                transform: translateX(200px);
+                opacity: 0;
+            }
+            10% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            20% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            30% {
+                transform: translateX(-200px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(-200px);
+                opacity: 0;
+            }
+        }
+
+        @-webkit-keyframes display {
+            0% {
+                transform: translateX(200px);
+                opacity: 0;
+            }
+            10% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            20% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            30% {
+                transform: translateX(-200px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(-200px);
+                opacity: 0;
+            }
+        }
+
+        &-slider {
+            @include sliderWidth;
+        }
+
+        &-slider > &-slide {
+            position: absolute;
+            top: 0;
+            @include sliderLeft;
+            opacity: 0;
+            animation: display 16s infinite;
+            -webkit-animation: display 16s infinite;
+        }
+
+
+        &-slide {
+            @include aboutHeight(true);
+            @include sliderWidth;
+
+            @for $i from 1 to 5 {
+                &:nth-child(#{$i}) { 
+                    animation-delay: ($i - 1) * 4s;
+                    -webkit-animation-delay: ($i - 1) * 4s;
+                }
+            }
+        }
+    }
+}

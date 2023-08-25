@@ -1,0 +1,15 @@
+# Git
+.git
+.gitignore
+
+# Docker
+.docker
+
+# Python
+technohub/__pycache__/
+technohub/*/__pycache__/
+technohub/*/*/__pycache__/
+technohub/*/*/*/__pycache__/
+.env/
+.venv/
+venv/

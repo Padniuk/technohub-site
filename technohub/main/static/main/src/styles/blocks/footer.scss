@@ -1,0 +1,15 @@
+.footer {
+    position: relative;
+    margin-top: 60px;
+    background-color: $main-color;
+    
+    &::after {
+        content: '';
+        width: 100%;
+        background-color: black;
+        position: absolute;
+        display: block;
+        top: 0px;
+        height: 2px;
+    }
+}

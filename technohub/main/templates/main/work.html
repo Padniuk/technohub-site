@@ -1,0 +1,60 @@
+{% extends 'main/base.html' %}
+    {% block main %}
+    <main class="main"> 
+        <section class="greetings" id="greetings">
+            <div class="greetings__content">
+            {% block greetings %}
+            {% endblock %}
+            </div>
+        </section>
+        <section class="contact" id="contact">
+            <h1 class="section-title">
+                Зв'яжіться з нами
+            </h1>
+
+            <div class="contact__content">
+                <div class="contact__form">
+                    <h2 class="contact__form-title">Залишити заявку</h2>
+
+                    {% block form %}
+                    {% endblock %}
+                        {% csrf_token %}
+                        <div class="form__personal-info">
+                            <div class="form__input-block">
+                                <label for="{{ form.name.id_for_label }}" class="form__label">{{ form.phone.label }}</label>
+                                {{ form.name }}
+                            </div>
+
+                            <div class="form__input-block">
+                                <label for="{{ form.phone.id_for_label }}" class="form__label">{{ form.phone.label }}</label>
+                                {{ form.phone }}
+                            </div>
+                        </div>
+
+                        <div class="form__input-block">
+                            <label for="{{ form.additional_info.id_for_label }}" class="form__label">{{ form.additional_info.label }}</label>
+                            {{ form.additional_info }}
+                        </div>
+
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }} form__submit-message" id="msg" role="alert">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <button type="submit" class="form__submit-button">
+                                Залишити заявку
+                            </button>
+                        {% endif %}
+                    </form>
+                </div>
+
+                <div class="contact__style-image">
+                </div>
+            </div>
+        </section>
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    @include headerSizing;
+    gap: 16px;
+  }
+
+  &__item {
+    border-radius: 24px;
+    padding-inline: 8px;
+
+  }
+
+  &__link {
+    position: relative;
+    color: inherit;
+    @include TextSizing;
+
+    text-decoration: none;
+  }
+
+
+}
+
+.header .nav {
+  justify-self: right;
+  &__item {
+    background-color: $main-color;
+    &:hover {
+      background-color: #fff;
+      color: $accent-color;
+    }
+  }
+}
+
+.footer .nav {
+  &__item {
+    background-color: #fff;
+  
+    &:hover {
+      background-color: $main-color;
+      color: #000;
+    }
+  }
+}

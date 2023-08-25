@@ -1,0 +1,59 @@
+.faq {
+    @include contentPaddingInline;
+
+    &__content {
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $main-color;
+        border-radius: 24px;
+        
+        &-title {
+            @include listTextSizing;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            
+        }
+
+        &-details {
+            width: 80%;
+            background-color: #fff;
+            border-radius: 24px;
+            padding: 36px;
+            margin: 24px;
+        }
+        &-inner {
+            @include TextSizing;
+        }
+        
+        &-summary {
+            @include TextSizing;
+            &::marker {
+                content: none;
+            }
+            &::before {
+                content: "+";
+                color: $accent-color;
+                margin-right: 16px;
+            }
+        }
+
+        &-details[open] &-summary ~ &-inner {
+            font-weight: bold;
+            margin-top: 24px;
+            padding-bottom: 96px;
+            animation: open .5s ease-in-out;
+        }
+
+        @keyframes open {
+            0% {opacity: 0; margin-left: -20px}
+            100% {opacity: 1; margin-left: 0px}
+        }
+
+        &-details[open] &-summary::before {
+            content: "-";
+        }
+    }
+}

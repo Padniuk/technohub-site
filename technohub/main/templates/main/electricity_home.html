@@ -1,0 +1,47 @@
+{% extends 'main/home.html' %}
+{% load static %}
+
+{% block icon %}     
+    <link rel="icon" href="{% static 'main/src/images/icon-electricity.svg' %}" type="image">
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'main/src/styles/electricity_style.css' %}">
+{% endblock %}
+
+{% block js %}
+    <script src="{% static '/main/src/js/index.js' %}"></script>
+{% endblock %}
+
+{% block page_title %}
+    <title>Головна | Електрика</title>
+{% endblock %}
+
+
+{% block logo %}
+    <img src="{% static 'main/src/images/header-logo-electricity.svg' %}" alt="" class="header__logo">
+{% endblock %}
+
+
+
+{% block links %}
+    <a href="/" class="header__router-link header__router--plumbing">Сантехніка</a>
+    <a href="" class="header__router-link header__router--electricity">Електрика</a>
+{% endblock %}
+
+{% block work %}
+<li class="nav__item">
+    <a href="{% url 'work_electricity' %}" class="nav__link">Робота</a>
+</li>
+{% endblock %}
+
+{% block form %}
+    <form class="form" action="{% url 'main_electricity' %}" method="post">
+{% endblock %}
+
+{% block animation%}
+    <img src="{% static 'main/src/images/animation-electricity-1.jpg' %}" alt="" class="about__content-slide">
+    <img src="{% static 'main/src/images/animation-electricity-2.jpg' %}" alt="" class="about__content-slide">
+    <img src="{% static 'main/src/images/animation-electricity-3.jpg' %}" alt="" class="about__content-slide">
+    <img src="{% static 'main/src/images/animation-electricity-4.jpg' %}" alt="" class="about__content-slide">    
+{% endblock %}

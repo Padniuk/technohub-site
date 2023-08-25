@@ -1,0 +1,43 @@
+{% extends 'main/work.html' %}
+{% load static %}
+
+{% block icon %}     
+    <link rel="icon" href="{% static 'main/src/images/icon-plumbing.svg' %}" type="image">
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'main/src/styles/plumbing_style.css' %}">
+{% endblock %}
+
+{% block js %}
+    <script src="{% static '/main/src/js/index.js' %}"></script>
+{% endblock %}
+
+{% block page_title %}
+    <title>Робота | Електрика</title>
+{% endblock %}
+
+
+{% block logo %}
+    <img src="{% static 'main/src/images/header-logo-plumbing.svg' %}" alt="" class="header__logo">
+{% endblock %}
+
+{% block links %}
+    <a href="/" class="header__router-link header__router--plumbing">Сантехніка</a>
+    <a href="/electricity/" class="header__router-link header__router--electricity">Електрика</a>
+{% endblock %}
+
+
+{% block work %}
+<li class="nav__item">
+    <a href="{% url 'work_plumbing' %}" class="nav__link">Робота</a>
+</li>
+{% endblock %}
+
+{% block greetings %}
+    <img src="{% static 'main/src/images/work-plumbing.jpg' %}" alt="" class="greetings__content-image">
+{% endblock %}            
+
+{% block form %}
+    <form class="form" action="{% url 'work_plumbing' %}" method="post">
+{% endblock %}

@@ -1,0 +1,193 @@
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin contentPaddingInline {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 28px;
+  }
+}
+
+@mixin TextSizing {
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+
+  @include onTablet {
+    font-size: 20px;
+    height: 48px;
+    line-height: 48px;
+  }
+
+  @include onDesktop {
+    font-size: 22px;
+    height: 48px;
+    line-height: 48px;
+  }
+}
+
+@mixin listTextSizing {
+  height: 12px;
+  line-height: 12px;
+  font-size: 8px;
+
+  @include onTablet {
+    font-size: 16px;
+    height: 16px;
+    line-height: 12px;
+  }
+
+  @include onDesktop {
+    font-size: 16px;
+  }
+}
+
+
+@mixin headerSizing {
+  height: 48px;
+
+  @include onTablet {
+    height: 64px;
+  }
+
+  @include onDesktop {
+    height: 96px;
+  }
+}
+
+
+@mixin router-color($color) {
+  height: 80%;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+  margin: 0;
+  font-weight: 500;
+  color: white;
+  background-color: $color;
+
+  padding: 4px;
+
+  @include onTablet {
+    padding: 8px;
+  }
+
+  @include onDesktop {
+    padding: 12px;
+  }
+}
+
+@mixin serviceWidth {
+  width: 450px;
+
+  @include onDesktop {
+    width: 500px;
+  }
+}
+
+@mixin aboutResize {
+  height: 70vh;
+
+  @include onTablet {
+    height: 70vh;
+  }
+
+  @include onDesktop {
+    height: inherit;
+  }
+}
+
+@mixin aboutImageResize {
+  @include aboutResize;
+  width: 100%;
+
+  @include onTablet {
+    width: 70%;
+  }
+
+  @include onDesktop {
+    width: 50%;
+  }
+}
+@mixin linkPadding {
+  padding: 25px 25px;
+  @include onTablet {
+    padding: 50px 50px;
+  }
+
+  @include onDesktop {
+    padding: 100px 100px;
+  }
+}
+
+@mixin aboutHeight($isImage) {
+  @if $isImage {
+    height: 40vh;
+    @include onTablet {
+      height: 50vh;
+    }
+    @include onDesktop {
+      height: 80vh;
+    }
+  }
+  @else {
+    height: 50vh;
+    @include onTablet {
+      height: 60vh;
+    }
+    @include onDesktop {
+      height: 90vh;
+    }
+  }
+}
+
+
+@mixin sliderWidth {
+  width: 400px;
+  @include onTablet {
+    width: 500px;
+  }
+  @include onDesktop {
+    width: 1000px;
+  }
+}
+
+@mixin sliderLeft {
+  left: calc(50% - 200px);
+  @include onTablet {
+    left: calc(50% - 250px);
+  }
+  @include onDesktop {
+    left: calc(50% - 500px);
+  }
+}
+
+@mixin grid {
+  display: grid;;
+  @include onTablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include onDesktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@mixin greetingsImageSize {
+  height: 40vh;
+  @include onTablet {
+    height: 50vh;
+  }
+  @include onDesktop {
+    height: 90vh;
+  }
+}

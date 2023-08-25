@@ -1,0 +1,11 @@
+.telegram-link {
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    left: 20px;
+    @include linkPadding;
+    background-image: url('./../images/telegram-logo.svg');
+    color: #fff;
+    text-decoration: none;
+    z-index: 999;
+}
