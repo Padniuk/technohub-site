@@ -5,13 +5,13 @@ class Application(models.Model):
     application_type = models.CharField(max_length=30)
     name = models.CharField(max_length=30)
     phone = models.CharField(max_length=13)
-    problem = models.TextField(blank=True)
+    problem = models.TextField(blank=True, null=True)
     address = models.CharField(max_length=50)
     post_time = models.DateTimeField(default=timezone.now)
     complete_time = models.DateTimeField(null=True)
     message_id = models.CharField(max_length=50)
     price = models.IntegerField(default=0)
-    act_name = models.CharField(max_length=255)
+    act_name = models.CharField(max_length=255, null=True)
     
     workers = models.ManyToManyField('Worker', through='ApplicationWorkerAssociation')
 
@@ -20,7 +20,7 @@ class Worker(models.Model):
     name = models.CharField(max_length=255)
     phone = models.CharField(max_length=20)
     user_id = models.CharField(max_length=50)
-    additional_info = models.TextField(blank=True)
+    additional_info = models.TextField(blank=True, null=True)
     
     applications = models.ManyToManyField('Application', through='ApplicationWorkerAssociation')
 
