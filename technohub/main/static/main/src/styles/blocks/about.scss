@@ -2,7 +2,7 @@
     @include contentPaddingInline;
     @include aboutHeight(false);
     &__content {
-        @include aboutResize;
+        @include aboutHeight(true);
         position: relative;
         @keyframes display {
             0% {

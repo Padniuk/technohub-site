@@ -24,11 +24,13 @@ window.onload = function(){
 
 function isElementInViewport(el) {
   const rect = el.getBoundingClientRect();
+  const viewportHeight = window.innerHeight;
+
+  console.log(`Bottom: ${rect.bottom}px - ${window.innerHeight} - ${document.documentElement.clientHeight}`);
+  
   return (
     rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    rect.bottom <= (window.innerHeight + 1 || document.documentElement.clientHeight + 1)
   );
 }
 
@@ -47,12 +49,5 @@ function handleScroll() {
 window.addEventListener('scroll', handleScroll);
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  const faqDetails = document.querySelectorAll("faq__content-details");
 
-  faqDetails.forEach(detail => {
-      detail.addEventListener("toggle", function() {
-          this.classList.toggle("open");
-      });
-  });
-});
+

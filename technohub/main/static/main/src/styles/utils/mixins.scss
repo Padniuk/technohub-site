@@ -95,38 +95,17 @@
   }
 }
 
-@mixin aboutResize {
-  height: 70vh;
-
+@mixin linkSizing {
+  width: 50px;
+  height: 50px;
   @include onTablet {
-    height: 70vh;
+    width: 100px;
+    height: 100px;
   }
 
   @include onDesktop {
-    height: inherit;
-  }
-}
-
-@mixin aboutImageResize {
-  @include aboutResize;
-  width: 100%;
-
-  @include onTablet {
-    width: 70%;
-  }
-
-  @include onDesktop {
-    width: 50%;
-  }
-}
-@mixin linkPadding {
-  padding: 25px 25px;
-  @include onTablet {
-    padding: 50px 50px;
-  }
-
-  @include onDesktop {
-    padding: 100px 100px;
+    width: 150px;
+    height: 150px;
   }
 }
 
@@ -134,7 +113,7 @@
   @if $isImage {
     height: 40vh;
     @include onTablet {
-      height: 50vh;
+      height: 40vh;
     }
     @include onDesktop {
       height: 80vh;
@@ -143,7 +122,7 @@
   @else {
     height: 50vh;
     @include onTablet {
-      height: 60vh;
+      height: 50vh;
     }
     @include onDesktop {
       height: 90vh;
@@ -183,11 +162,36 @@
 }
 
 @mixin greetingsImageSize {
-  height: 40vh;
+  height: 30vh;
   @include onTablet {
     height: 50vh;
   }
   @include onDesktop {
-    height: 90vh;
+    height: 80vh;
   }
 }
+
+@mixin details($isOpen) {
+  @if $isOpen {
+    margin-top: 14px;
+    @include onTablet {
+      margin-top: 18px;
+    }
+    @include onDesktop {
+      margin-top: 24px;
+    }
+  }
+  @else {
+    padding: 18px;
+    margin: 14px;
+    @include onTablet {
+      padding: 36px;
+      margin: 18px;
+    }
+    @include onDesktop {
+      margin: 24px;
+    }
+  }
+}
+    
+  

@@ -5,14 +5,8 @@
         }
     }
 
-    &__nav {
-        display: none;
-         @include onDesktop {
-            display: block;
-         }
-    }
-
     &--mobile {
+        display: none;
         @include contentPaddingInline;
         background-color: white;
         
@@ -21,10 +15,25 @@
             flex-direction: row;
             justify-content: space-between;
             align-self: center;
-          }
+        }
     }
 
     &__button--close {
         align-self: center;
+    }
+}
+
+.header .menu {
+    &__nav {
+        display: none;
+        @include onDesktop {
+            display: block;
+        }
+    }
+}
+
+.footer .menu {
+    &__nav {
+        display: block;
     }
 }

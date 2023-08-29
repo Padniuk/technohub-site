@@ -25,18 +25,18 @@ main {
     display: flex;
     justify-content: center; }
     .greetings__content-image {
-      height: 40vh;
+      height: 30vh;
       width: 85%; }
       @media (min-width: 576px) {
         .greetings__content-image {
           height: 50vh; } }
       @media (min-width: 1024px) {
         .greetings__content-image {
-          height: 90vh; } }
+          height: 80vh; } }
 .page {
   scroll-behavior: smooth; }
   .page__menu--mobile {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     left: 0;
@@ -152,12 +152,8 @@ main {
   .menu__icon {
     display: none; } }
 
-.menu__nav {
-  display: none; }
-  @media (min-width: 1024px) {
-    .menu__nav {
-      display: block; } }
 .menu--mobile {
+  display: none;
   padding-inline: 20px;
   background-color: white; }
   @media (min-width: 576px) {
@@ -171,6 +167,14 @@ main {
 
 .menu__button--close {
   align-self: center; }
+
+.header .menu__nav {
+  display: none; }
+  @media (min-width: 1024px) {
+    .header .menu__nav {
+      display: block; } }
+.footer .menu__nav {
+  display: block; }
 
 .nav__list {
   margin: 0;
@@ -426,19 +430,19 @@ main {
       padding-inline: 28px; } }
   @media (min-width: 576px) {
     .about {
-      height: 60vh; } }
+      height: 50vh; } }
   @media (min-width: 1024px) {
     .about {
       height: 90vh; } }
   .about__content {
-    height: 70vh;
+    height: 40vh;
     position: relative; }
     @media (min-width: 576px) {
       .about__content {
-        height: 70vh; } }
+        height: 40vh; } }
     @media (min-width: 1024px) {
       .about__content {
-        height: inherit; } }
+        height: 80vh; } }
 @keyframes display {
   0% {
     transform: translateX(200px);
@@ -498,7 +502,7 @@ main {
       width: 400px; }
       @media (min-width: 576px) {
         .about__content-slide {
-          height: 50vh; } }
+          height: 40vh; } }
       @media (min-width: 1024px) {
         .about__content-slide {
           height: 80vh; } }
@@ -551,36 +555,39 @@ main {
       width: 80%;
       background-color: #fff;
       border-radius: 24px;
-      padding: 36px;
-      margin: 24px; }
+      padding: 18px;
+      margin: 14px; }
+      @media (min-width: 576px) {
+        .faq__content-details {
+          padding: 36px;
+          margin: 18px; } }
+      @media (min-width: 1024px) {
+        .faq__content-details {
+          margin: 24px; } }
     .faq__content-inner {
-      height: 32px;
-      line-height: 32px;
-      font-size: 14px; }
+      height: 12px;
+      line-height: 12px;
+      font-size: 8px; }
       @media (min-width: 576px) {
         .faq__content-inner {
-          font-size: 20px;
-          height: 48px;
-          line-height: 48px; } }
+          font-size: 16px;
+          height: 16px;
+          line-height: 12px; } }
       @media (min-width: 1024px) {
         .faq__content-inner {
-          font-size: 22px;
-          height: 48px;
-          line-height: 48px; } }
+          font-size: 16px; } }
     .faq__content-summary {
-      height: 32px;
-      line-height: 32px;
-      font-size: 14px; }
+      height: 12px;
+      line-height: 12px;
+      font-size: 8px; }
       @media (min-width: 576px) {
         .faq__content-summary {
-          font-size: 20px;
-          height: 48px;
-          line-height: 48px; } }
+          font-size: 16px;
+          height: 16px;
+          line-height: 12px; } }
       @media (min-width: 1024px) {
         .faq__content-summary {
-          font-size: 22px;
-          height: 48px;
-          line-height: 48px; } }
+          font-size: 16px; } }
       .faq__content-summary::marker {
         content: none; }
       .faq__content-summary::before {
@@ -589,10 +596,14 @@ main {
         margin-right: 16px; }
     .faq__content-details[open] .faq__content-summary ~ .faq__content-inner {
       font-weight: bold;
-      margin-top: 24px;
-      padding-bottom: 96px;
+      margin-top: 14px;
       animation: open .5s ease-in-out; }
-
+      @media (min-width: 576px) {
+        .faq__content-details[open] .faq__content-summary ~ .faq__content-inner {
+          margin-top: 18px; } }
+      @media (min-width: 1024px) {
+        .faq__content-details[open] .faq__content-summary ~ .faq__content-inner {
+          margin-top: 24px; } }
 @keyframes open {
   0% {
     opacity: 0;
@@ -620,15 +631,18 @@ main {
   display: none;
   position: fixed;
   bottom: 0px;
-  left: 20px;
-  padding: 25px 25px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
   background-image: url("./../images/telegram-logo.svg");
   color: #fff;
   text-decoration: none;
   z-index: 999; }
   @media (min-width: 576px) {
     .telegram-link {
-      padding: 50px 50px; } }
+      width: 100px;
+      height: 100px; } }
   @media (min-width: 1024px) {
     .telegram-link {
-      padding: 100px 100px; } }
+      width: 150px;
+      height: 150px; } }

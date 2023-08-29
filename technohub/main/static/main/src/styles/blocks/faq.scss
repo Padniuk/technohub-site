@@ -21,15 +21,14 @@
             width: 80%;
             background-color: #fff;
             border-radius: 24px;
-            padding: 36px;
-            margin: 24px;
+            @include details(false);
         }
         &-inner {
-            @include TextSizing;
+            @include listTextSizing;
         }
         
         &-summary {
-            @include TextSizing;
+            @include listTextSizing;
             &::marker {
                 content: none;
             }
@@ -42,8 +41,7 @@
 
         &-details[open] &-summary ~ &-inner {
             font-weight: bold;
-            margin-top: 24px;
-            padding-bottom: 96px;
+            @include details(true);
             animation: open .5s ease-in-out;
         }
 

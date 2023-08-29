@@ -2,8 +2,8 @@
     display: none;
     position: fixed;
     bottom: 0px;
-    left: 20px;
-    @include linkPadding;
+    left: 0px;
+    @include linkSizing;
     background-image: url('./../images/telegram-logo.svg');
     color: #fff;
     text-decoration: none;
