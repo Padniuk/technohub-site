@@ -25,9 +25,7 @@ window.onload = function(){
 function isElementInViewport(el) {
   const rect = el.getBoundingClientRect();
   const viewportHeight = window.innerHeight;
-
-  console.log(`Bottom: ${rect.bottom}px - ${window.innerHeight} - ${document.documentElement.clientHeight}`);
-  
+ 
   return (
     rect.top >= 0 &&
     rect.bottom <= (window.innerHeight + 1 || document.documentElement.clientHeight + 1)
