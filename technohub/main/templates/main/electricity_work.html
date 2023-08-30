@@ -34,3 +34,9 @@
 {% block form %}
     <form class="form" action="{% url 'work_electricity' %}" method="post">
 {% endblock %}
+
+{% block footer_work %}
+    <li class="nav__item">
+        <a href="{% url 'work_electricity' %}" class="nav__link">Робота</a>
+    </li>
+{% endblock %}
