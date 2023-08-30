@@ -11,7 +11,26 @@
     <li class="nav__item">
         <a href="#contact" class="nav__link">Контакти</a>
     </li>
+    {% block work %}
+    {% endclock %}
 {% endblock %}
+
+{% block aside %}
+    <li class="nav__item">
+        <a href="#about" class="nav__link">Про нас</a>
+    </li>
+
+    <li class="nav__item">
+        <a href="#services" class="nav__link">Послуги</a>
+    </li>
+
+    <li class="nav__item">
+        <a href="#contact" class="nav__link">Контакти</a>
+    </li>
+
+    {% block aside_work %}
+    {% endblock %}
+{% endclock %}
                             
 
 {% block main %}   

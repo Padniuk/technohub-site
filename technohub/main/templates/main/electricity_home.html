@@ -17,12 +17,9 @@
     <title>Головна | Електрика</title>
 {% endblock %}
 
-
 {% block logo %}
     <img src="{% static 'main/src/images/header-logo-electricity.svg' %}" alt="" class="header__logo">
 {% endblock %}
-
-
 
 {% block links %}
     <a href="/" class="header__router-link header__router--plumbing">Сантехніка</a>
@@ -33,6 +30,12 @@
 <li class="nav__item">
     <a href="{% url 'work_electricity' %}" class="nav__link">Робота</a>
 </li>
+{% endblock %}
+
+{% block aside_work %}
+    <li class="nav__item">
+        <a href="{% url 'work_electricity' %}" class="nav__link">Робота</a>
+    </li>
 {% endblock %}
 
 {% block form %}

@@ -41,9 +41,6 @@
                         <ul class="nav__list">
                             {% block menu %}
                             {% endblock %}
-
-                            {% block work %}
-                            {% endblock %}
                         </ul>
                     </nav>
                 </div>
@@ -51,21 +48,8 @@
                 <aside class="page__menu--mobile menu--mobile" id="menu-mobile">
                     <nav class="nav menu--mobile__nav">
                         <ul class="nav__list">
-                            <li class="nav__item">
-                                <a href="#about" class="nav__link">Про нас</a>
-                            </li>
-
-                            <li class="nav__item">
-                                <a href="#services" class="nav__link">Послуги</a>
-                            </li>
-
-                            <li class="nav__item">
-                                <a href="#contact" class="nav__link">Контакти</a>
-                            </li>
-
-                            <li class="nav__item">
-                                <a href="" class="nav__link">Робота</a>
-                            </li>
+                            {% block aside %}
+                            {% endblock %}
                         </ul>
 
                         <a href="#" class="menu__button--close">

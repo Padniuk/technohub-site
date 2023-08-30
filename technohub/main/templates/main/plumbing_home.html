@@ -32,6 +32,12 @@
 </li>
 {% endblock %}
 
+{% block aside_work %}
+    <li class="nav__item">
+        <a href="{% url 'work_plumbing' %}" class="nav__link">Робота</a>
+    </li>
+{% endblock %}
+
 {% block form %}
     <form class="form" action="{% url 'main_plumbing' %}" method="post">
 {% endblock %}
