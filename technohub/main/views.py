@@ -1,4 +1,5 @@
 from main.utils import HomeMixin, WorkMixin
+from django.http import JsonResponse
 
 class HomePlumbing(HomeMixin):
     template_name = 'main/plumbing_home.html'
@@ -19,6 +20,4 @@ class WorkElectricity(WorkMixin):
     template_name = 'main/electricity_work.html'
     success_url = "/electricity/"
     service_type = 'electricity'
-
-        
-        
+    

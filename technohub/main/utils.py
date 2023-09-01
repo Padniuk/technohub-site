@@ -1,7 +1,10 @@
+import os
+import json
 from django.views.generic import FormView, ListView
 from main.forms import PostApplicationForm, PostWorkerForm
 from main.models import Service
 from django.contrib import messages
+import requests
 
 class HomeMixin(ListView, FormView):
 
@@ -19,16 +22,49 @@ class HomeMixin(ListView, FormView):
         context['services'] = filtered_services
         return context
     
+    
     def get_queryset(self):
         return self.model.objects.filter(service_type=self.service_type)
+
 
     def form_valid(self, form):
         application = form.save(commit=False)
         application.application_type = self.service_type
         application.save()
 
+        message_text = f"🔵 Aктивно\n\n{application.problem}\n\nАдреса: `{application.address}`"
+
+        self.notify_telegram_bot(self.service_type, message_text)
+
         messages.success(self.request, 'Форму успішно відправлено!')
         return super().form_valid(form)
+
+
+    def notify_telegram_bot(self, service_type, message_text):
+        bot_token = os.environ.get('BOT_TOKEN')
+
+        url = f'https://api.telegram.org/bot{bot_token}/sendMessage'
+
+        inline_keyboard = [
+            [{"text": "Взяти замовлення ", "callback_data": "send_customer_info"}]
+        ]
+
+        markup = {
+            "inline_keyboard": inline_keyboard
+        }
+
+        inline_keyboard_json = json.dumps(markup)
+
+        chat_id_map = {'electricity': os.environ.get('ELECTRICITY_CHAT_ID'), 'plumbing': os.environ.get('PLUMBING_CHAT_ID')}
+
+        message_json = {
+            'chat_id': chat_id_map.get(service_type),
+            'text': message_text,
+            'reply_markup': inline_keyboard_json,
+            'parse_mode': 'Markdown'
+        }
+
+        requests.post(url, json=message_json)
 
 
 class WorkMixin(FormView):
