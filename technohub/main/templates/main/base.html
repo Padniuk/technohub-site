@@ -12,8 +12,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-        {% block js%}
-        {% endblock %}
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
+        <script src="{% static '/main/src/js/about.js' %}"></script>
+        <script src="{% static '/main/src/js/link.js' %}"></script>
+        <script src="{% static '/main/src/js/telegram.js' %}"></script>
         {% block page_title %}
         {% endblock %}
     </head>
