@@ -30,12 +30,14 @@ class HomeMixin(ListView, FormView):
     def form_valid(self, form):
         application = form.save(commit=False)
         application.application_type = self.service_type
-        application.save()
+        
 
         message_text = f"🔵 Aктивно\n\n{application.problem}\n\nАдреса: `{application.address}`"
 
-        self.notify_telegram_bot(self.service_type, message_text)
+        message_id = self.notify_telegram_bot(self.service_type, message_text)
+        application.message_id = message_id
 
+        application.save()
         messages.success(self.request, 'Форму успішно відправлено!')
         return super().form_valid(form)
 
@@ -64,7 +66,12 @@ class HomeMixin(ListView, FormView):
             'parse_mode': 'Markdown'
         }
 
-        requests.post(url, json=message_json)
+        response = requests.post(url, json=message_json)
+
+        response_data = response.json()
+        message_id = response_data.get('result', {}).get('message_id', None)
+        return message_id
+   
 
 
 class WorkMixin(FormView):
