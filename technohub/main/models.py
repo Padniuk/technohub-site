@@ -11,7 +11,7 @@ class Application(models.Model):
     complete_time = models.DateTimeField(null=True)
     message_id = models.CharField(max_length=50)
     price = models.IntegerField(default=0)
-    act_name = models.CharField(max_length=255, null=True)
+    act_id = models.IntegerField(default=0)
     
     workers = models.ManyToManyField('Worker', through='ApplicationWorkerAssociation')
 
