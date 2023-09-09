@@ -194,7 +194,8 @@ main {
       height: 96px; } }
 .nav__item {
   border-radius: 24px;
-  padding-inline: 8px; }
+  padding-inline: 8px;
+  white-space: nowrap; }
 
 .nav__link {
   position: relative;
