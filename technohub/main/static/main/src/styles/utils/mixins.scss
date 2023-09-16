@@ -18,10 +18,10 @@
   }
 }
 
-@mixin TextSizing {
+@mixin navTextSizing {
   height: 32px;
   line-height: 32px;
-  font-size: 14px;
+  font-size: 8px;
 
   @include onTablet {
     font-size: 20px;
@@ -36,15 +36,47 @@
   }
 }
 
+@mixin sectionTextSizing {
+  height: 32px;
+  line-height: 32px;
+  font-size: 12px;
+
+  @include onTablet {
+    font-size: 20px;
+    height: 48px;
+    line-height: 48px;
+  }
+
+  @include onDesktop {
+    font-size: 22px;
+    height: 48px;
+    line-height: 48px;
+  }
+}
+
+@mixin TextSizing {
+  line-height: 32px;
+  font-size: 12px;
+  text-align: center;
+
+  @include onTablet {
+    font-size: 20px;
+    line-height: 48px;
+  }
+
+  @include onDesktop {
+    font-size: 22px;
+    line-height: 48px;
+  }
+}
+
 @mixin listTextSizing {
-  height: 12px;
-  line-height: 12px;
-  font-size: 8px;
+  line-height: 18px;
+  font-size: 12px;
 
   @include onTablet {
     font-size: 16px;
-    height: 16px;
-    line-height: 12px;
+    line-height: 18px;
   }
 
   @include onDesktop {

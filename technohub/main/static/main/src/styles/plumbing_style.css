@@ -81,21 +81,19 @@ main {
       .header__logo {
         height: 96px; } }
   .header__router {
-    height: 32px;
     line-height: 32px;
-    font-size: 14px;
+    font-size: 12px;
+    text-align: center;
     display: flex;
     flex: row;
     align-items: center; }
     @media (min-width: 576px) {
       .header__router {
         font-size: 20px;
-        height: 48px;
         line-height: 48px; } }
     @media (min-width: 1024px) {
       .header__router {
         font-size: 22px;
-        height: 48px;
         line-height: 48px; } }
     .header__router--plumbing {
       border-radius: 24px 0 0 24px;
@@ -202,7 +200,7 @@ main {
   color: inherit;
   height: 32px;
   line-height: 32px;
-  font-size: 14px;
+  font-size: 8px;
   text-decoration: none; }
   @media (min-width: 576px) {
     .nav__link {
@@ -261,9 +259,9 @@ main {
       .contact__form {
         width: 40%; } }
     .contact__form-title {
-      height: 32px;
       line-height: 32px;
-      font-size: 14px;
+      font-size: 12px;
+      text-align: center;
       font-size: 20px;
       line-height: 20px;
       padding-block: 16px;
@@ -272,12 +270,10 @@ main {
       @media (min-width: 576px) {
         .contact__form-title {
           font-size: 20px;
-          height: 48px;
           line-height: 48px; } }
       @media (min-width: 1024px) {
         .contact__form-title {
           font-size: 22px;
-          height: 48px;
           line-height: 48px; } }
       .contact__form-title::after {
         content: '';
@@ -296,21 +292,19 @@ main {
   font-size: 18px;
   line-height: 24px; }
   .form__label {
-    height: 32px;
     line-height: 32px;
-    font-size: 14px;
+    font-size: 12px;
+    text-align: center;
     display: block;
     text-align: center;
     width: 100%; }
     @media (min-width: 576px) {
       .form__label {
         font-size: 20px;
-        height: 48px;
         line-height: 48px; } }
     @media (min-width: 1024px) {
       .form__label {
         font-size: 22px;
-        height: 48px;
         line-height: 48px; } }
   .form__input {
     display: block;
@@ -373,47 +367,41 @@ main {
     justify-content: center;
     align-items: center; }
     .services__service-title {
-      height: 32px;
       line-height: 32px;
-      font-size: 14px; }
+      font-size: 12px;
+      text-align: center; }
       @media (min-width: 576px) {
         .services__service-title {
           font-size: 20px;
-          height: 48px;
           line-height: 48px; } }
       @media (min-width: 1024px) {
         .services__service-title {
           font-size: 22px;
-          height: 48px;
           line-height: 48px; } }
     .services__service-item {
-      height: 12px;
-      line-height: 12px;
-      font-size: 8px; }
+      line-height: 18px;
+      font-size: 12px; }
       @media (min-width: 576px) {
         .services__service-item {
           font-size: 16px;
-          height: 16px;
-          line-height: 12px; } }
+          line-height: 18px; } }
       @media (min-width: 1024px) {
         .services__service-item {
           font-size: 16px; } }
     .services__service-list {
       list-style: none; }
     .services__service-price {
-      height: 32px;
       line-height: 32px;
-      font-size: 14px;
+      font-size: 12px;
+      text-align: center;
       font-weight: bold; }
       @media (min-width: 576px) {
         .services__service-price {
           font-size: 20px;
-          height: 48px;
           line-height: 48px; } }
       @media (min-width: 1024px) {
         .services__service-price {
           font-size: 22px;
-          height: 48px;
           line-height: 48px; } }
     .services__service-logo {
       width: 50%;
@@ -539,16 +527,14 @@ main {
     background-color: #d0e5ff;
     border-radius: 24px; }
     .faq__content-title {
-      height: 12px;
-      line-height: 12px;
-      font-size: 8px;
+      line-height: 18px;
+      font-size: 12px;
       margin-top: 5%;
       margin-bottom: 5%; }
       @media (min-width: 576px) {
         .faq__content-title {
           font-size: 16px;
-          height: 16px;
-          line-height: 12px; } }
+          line-height: 18px; } }
       @media (min-width: 1024px) {
         .faq__content-title {
           font-size: 16px; } }
@@ -566,26 +552,22 @@ main {
         .faq__content-details {
           margin: 24px; } }
     .faq__content-inner {
-      height: 12px;
-      line-height: 12px;
-      font-size: 8px; }
+      line-height: 18px;
+      font-size: 12px; }
       @media (min-width: 576px) {
         .faq__content-inner {
           font-size: 16px;
-          height: 16px;
-          line-height: 12px; } }
+          line-height: 18px; } }
       @media (min-width: 1024px) {
         .faq__content-inner {
           font-size: 16px; } }
     .faq__content-summary {
-      height: 12px;
-      line-height: 12px;
-      font-size: 8px; }
+      line-height: 18px;
+      font-size: 12px; }
       @media (min-width: 576px) {
         .faq__content-summary {
           font-size: 16px;
-          height: 16px;
-          line-height: 12px; } }
+          line-height: 18px; } }
       @media (min-width: 1024px) {
         .faq__content-summary {
           font-size: 16px; } }
