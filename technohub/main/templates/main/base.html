@@ -34,31 +34,11 @@
                     {% endblock %}
                 </div>
 
-                <div class="menu">
-                    <a href="#menu-mobile" class="menu__button">
-                        <img src="{% static 'main/src/images/icon-menu.svg' %}" alt="icon-menu" class="menu__icon">
-                    </a>
+                {% block menu %}
+                {% endblock %}
 
-                    <nav class="nav menu__nav">
-                        <ul class="nav__list">
-                            {% block menu %}
-                            {% endblock %}
-                        </ul>
-                    </nav>
-                </div>
-
-                <aside class="page__menu--mobile menu--mobile" id="menu-mobile">
-                    <nav class="nav menu--mobile__nav">
-                        <ul class="nav__list">
-                            {% block aside %}
-                            {% endblock %}
-                        </ul>
-
-                        <a href="#" class="menu__button--close">
-                            <img src="{% static 'main/src/images/icon-close.svg' %}" alt="icon-close" class="menu__icon">
-                        </a>
-                    </nav>
-                </aside>
+                {% block aside %}
+                {% endblock %}
             </div>
         </header>
 

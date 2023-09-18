@@ -1,162 +1,183 @@
 {% extends 'main/base.html' %}
+{% load static %}
 
 {% block menu %}
-    <li class="nav__item">
-        <a href="#about" class="nav__link">Про нас</a>
-    </li>
+    <div class="menu">
+        <a href="#menu-mobile" class="menu__button">
+            <img src="{% static 'main/src/images/icon-menu.svg' %}" alt="icon-menu" class="menu__icon">
+        </a>
 
-    <li class="nav__item">
-        <a href="#services" class="nav__link">Послуги</a>
-    </li>
-    <li class="nav__item">
-        <a href="#contact" class="nav__link">Контакти</a>
-    </li>
-    {% block work %}
-    {% endblock %}
+        <nav class="nav menu__nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">Про нас</a>
+                </li>
+            
+                <li class="nav__item">
+                    <a href="#services" class="nav__link">Послуги</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">Контакти</a>
+                </li>
+                {% block work %}
+                {% endblock %}
+            </ul>
+        </nav>
+    </div>  
 {% endblock %}
 
 {% block aside %}
-    <li class="nav__item">
-        <a href="#about" class="nav__link">Про нас</a>
-    </li>
+<aside class="page__menu--mobile menu--mobile" id="menu-mobile">
+    <nav class="nav menu--mobile__nav">
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a href="#about" class="nav__link">Про нас</a>
+            </li>
+        
+            <li class="nav__item">
+                <a href="#services" class="nav__link">Послуги</a>
+            </li>
+        
+            <li class="nav__item">
+                <a href="#contact" class="nav__link">Контакти</a>
+            </li>
+            {% block aside_work %}
+            {% endblock %}
+        </ul>
 
-    <li class="nav__item">
-        <a href="#services" class="nav__link">Послуги</a>
-    </li>
-
-    <li class="nav__item">
-        <a href="#contact" class="nav__link">Контакти</a>
-    </li>
-
-    {% block aside_work %}
-    {% endblock %}
+        <a href="#" class="menu__button--close">
+            <img src="{% static 'main/src/images/icon-close.svg' %}" alt="icon-close" class="menu__icon">
+        </a>
+    </nav>
+</aside>
 {% endblock %}
                             
 
 {% block main %}   
-        <section class="contact" id="contact">
-            <h1 class="section-title">
-                Зв'яжіться з нами
-            </h1>
+<section class="contact" id="contact">
+    <h1 class="section-title">
+        Зв'яжіться з нами
+    </h1>
 
-            <div class="contact__content">
-                <div class="contact__form">
-                    <h2 class="contact__form-title">Залишити заявку</h2>
-                    
-                    {% block form %}
-                    {% endblock %}
-                        {% csrf_token %}
-                        <div class="form__input-block">
-                            <label for="{{ form.problem.id_for_label }}" class="form__label">{{ form.problem.label }}</label>
-                            {{ form.problem }}
-                        </div>
-
-                        <div class="form__personal-info">
-                            <div class="form__input-block">
-                                <label for="{{ form.name.id_for_label }}" class="form__label">{{ form.phone.label }}</label>
-                                {{ form.name }}
-                            </div>
-
-                            <div class="form__input-block">
-                                <label for="{{ form.phone.id_for_label }}" class="form__label">{{ form.phone.label }}</label>
-                                {{ form.phone }}
-                            </div>
-                        </div>
-
-                        <div class="form__input-block">
-                            <label for="{{ form.address.id_for_label }}" class="form__label">{{ form.address.label }}</label>
-                            {{ form.address }}
-                        </div>
-
-                        {% if messages %}
-                            {% for message in messages %}
-                                <div class="alert alert-{{ message.tags }} form__submit-message" id="msg" role="alert">
-                                    {{ message }}
-                                </div>
-                            {% endfor %}
-                        {% else %}
-                            <button type="submit" class="form__submit-button">
-                                Залишити заявку
-                            </button>
-                        {% endif %}
-                    </form>
+    <div class="contact__content">
+        <div class="contact__form">
+            <h2 class="contact__form-title">Залишити заявку</h2>
+            
+            {% block form %}
+            {% endblock %}
+                {% csrf_token %}
+                <div class="form__input-block">
+                    <label for="{{ form.problem.id_for_label }}" class="form__label">{{ form.problem.label }}</label>
+                    {{ form.problem }}
                 </div>
 
-                <div class="contact__style-image">
+                <div class="form__personal-info">
+                    <div class="form__input-block">
+                        <label for="{{ form.name.id_for_label }}" class="form__label">{{ form.phone.label }}</label>
+                        {{ form.name }}
+                    </div>
+
+                    <div class="form__input-block">
+                        <label for="{{ form.phone.id_for_label }}" class="form__label">{{ form.phone.label }}</label>
+                        {{ form.phone }}
+                    </div>
                 </div>
-            </div>
-        </section>
 
-        <section class="services" id="services">
-            <h1 class="section-title">
-                Наші послуги
-            </h1>
-            <div class="services__content">
-                {% for serv in services %}
-                    <div class="services__service">
-                        <img src="{{ serv.photo.url }}" alt="{{ serv.name }}" class="services__service-logo">
-                        <h2 class="services__service-title">{{ serv.name }}</h2>
-                        <ul class="services__service-list">
-                            {% for individual_service in serv.individual_services %}
-                                <li class="services__service-item">{{ individual_service }}</li>
-                            {% endfor %}
-                        </ul>
-                        <div class="services__service-price">Ціна: від {{ serv.price }} грн</div>
-                    </div>
-                {% endfor %}
-            </div>
-                
-        </section>
-        <section class="about" id="about">
-            <h1 class="section-title">
-                Чому ми найкращі?
-            </h1>
-            <div class="about__content">
-                <div class="about__content-slider">
-                    {% block animation %}
-                    {% endblock %}
+                <div class="form__input-block">
+                    <label for="{{ form.address.id_for_label }}" class="form__label">{{ form.address.label }}</label>
+                    {{ form.address }}
                 </div>
-            </div>
-        </section>
 
-        <section class="faq">
-            <h1 class="section-title">
-                FAQ
-            </h1>
-            <div class="faq__content">
-                <h2 class="faq__content-title">Ми постаралися заздалегідь відповісти на деякі ваші запитання</h2>
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} form__submit-message" id="msg" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <button type="submit" class="form__submit-button">
+                        Залишити заявку
+                    </button>
+                {% endif %}
+            </form>
+        </div>
 
-                <details class="faq__content-details">
-                    <summary class="faq__content-summary">Як викликати майстра?</summary>
-                    <div class="faq__content-inner">
-                        Заповніть форму надавши ваше ім'я та телефон, після чого з вами зв'яжуться
-                    </div>
-                </details>            
-                <details class="faq__content-details">
-                    <summary class="faq__content-summary">Чи може майстер принести матеріал з собою?</summary>
-                    <div class="faq__content-inner">
-                        Так, при необхідності майстер може привезти з собою весь матеріал, заздалегідь обговоривши з вами ціни і якість
-                    </div>
-                </details>
-                    <details class="faq__content-details">
-                    <summary class="faq__content-summary">Чи є гарантія на роботу?  </summary>
-                    <div class="faq__content-inner">
-                        Звичайно! Наша компанія надає гарантію на сервіс і надані матеріали
-                    </div>
-                </details>
-                <details class="faq__content-details">
-                    <summary class="faq__content-summary">Що якщо майстер вісля зідзвону відмовився від замовлення?</summary>
-                    <div class="faq__content-inner">
-                        Ми автоматично підберемо іншого майстра, який буде готовий обговорити з Вами деталі
-                    </div>
-                </details>
-                <details class="faq__content-details">
-                    <summary class="faq__content-summary">Чи є якісь завдання, з якими майстер не впорається?</summary>
-                    <div class="faq__content-inner">
-                        У такому разі ми підберемо якнайшвидче іншого майстра
-                    </div>
-                </details>
+        <div class="contact__style-image">
+        </div>
+    </div>
+</section>
+
+<section class="services" id="services">
+    <h1 class="section-title">
+        Наші послуги
+    </h1>
+    <div class="services__content">
+        {% for serv in services %}
+            <article class="services__service">
+                <img src="{{ serv.photo.url }}" alt="{{ serv.name }}" class="services__service-logo">
+                <div class="services__service-content">
+                    <h2 class="services__service-title">{{ serv.name }}</h2>
+                    <ul class="services__service-list">
+                        {% for individual_service in serv.individual_services %}
+                            <li class="services__service-item">{{ individual_service }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="services__service-price">Ціна: від {{ serv.price }} грн</div>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+        
+</section>
+<section class="about" id="about">
+    <h1 class="section-title">
+        Чому ми найкращі?
+    </h1>
+    <div class="about__content">
+        <div class="about__content-slider">
+            {% block animation %}
+            {% endblock %}
+        </div>
+    </div>
+</section>
+
+<section class="faq">
+    <h1 class="section-title">
+        FAQ
+    </h1>
+    <div class="faq__content">
+        <h2 class="faq__content-title">Ми постаралися заздалегідь відповісти на деякі ваші запитання</h2>
+
+        <details class="faq__content-details">
+            <summary class="faq__content-summary">Як викликати майстра?</summary>
+            <div class="faq__content-inner">
+                Заповніть форму надавши ваше ім'я та телефон, після чого з вами зв'яжуться
             </div>
-        </section>
-    </main>
+        </details>            
+        <details class="faq__content-details">
+            <summary class="faq__content-summary">Чи може майстер принести матеріал з собою?</summary>
+            <div class="faq__content-inner">
+                Так, при необхідності майстер може привезти з собою весь матеріал, заздалегідь обговоривши з вами ціни і якість
+            </div>
+        </details>
+            <details class="faq__content-details">
+            <summary class="faq__content-summary">Чи є гарантія на роботу?  </summary>
+            <div class="faq__content-inner">
+                Звичайно! Наша компанія надає гарантію на сервіс і надані матеріали
+            </div>
+        </details>
+        <details class="faq__content-details">
+            <summary class="faq__content-summary">Що якщо майстер вісля зідзвону відмовився від замовлення?</summary>
+            <div class="faq__content-inner">
+                Ми автоматично підберемо іншого майстра, який буде готовий обговорити з Вами деталі
+            </div>
+        </details>
+        <details class="faq__content-details">
+            <summary class="faq__content-summary">Чи є якісь завдання, з якими майстер не впорається?</summary>
+            <div class="faq__content-inner">
+                У такому разі ми підберемо якнайшвидче іншого майстра
+            </div>
+        </details>
+    </div>
+</section>
 {% endblock %}

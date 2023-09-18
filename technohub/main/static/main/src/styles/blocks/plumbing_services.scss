@@ -18,7 +18,7 @@
         display: flex;
         flex-direction: column;
     
-        justify-content:center;
+        justify-content:space-around;
         align-items: center;
 
 
@@ -28,21 +28,23 @@
         &-item {
             @include listTextSizing;
         }
-
-        &-list {
-            list-style: none;
-        }
         &-price {
             @include TextSizing;
             font-weight: bold;
         }
         &-logo {
             width: 50%;
-            height: 50%;
-            margin-bottom: 15%;
+            margin-bottom: 20px;
             border: 3px solid $accent-color;
             background-color: #000;
             border-radius: 50%;
+        }
+        &-content {
+            display: flex;
+            flex-direction: column;
+        
+            justify-content:center;
+            align-items: center;
         }   
     }
 }

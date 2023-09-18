@@ -89,8 +89,8 @@ main {
     align-items: center; }
     @media (min-width: 576px) {
       .header__router {
-        font-size: 20px;
-        line-height: 48px; } }
+        font-size: 16px;
+        line-height: 32px; } }
     @media (min-width: 1024px) {
       .header__router {
         font-size: 22px;
@@ -165,6 +165,9 @@ main {
 
 .menu__button--close {
   align-self: center; }
+
+.menu-empty {
+  width: 20%; }
 
 .header .menu__nav {
   display: none; }
@@ -269,8 +272,8 @@ main {
       position: relative; }
       @media (min-width: 576px) {
         .contact__form-title {
-          font-size: 20px;
-          line-height: 48px; } }
+          font-size: 16px;
+          line-height: 32px; } }
       @media (min-width: 1024px) {
         .contact__form-title {
           font-size: 22px;
@@ -300,8 +303,8 @@ main {
     width: 100%; }
     @media (min-width: 576px) {
       .form__label {
-        font-size: 20px;
-        line-height: 48px; } }
+        font-size: 16px;
+        line-height: 32px; } }
     @media (min-width: 1024px) {
       .form__label {
         font-size: 22px;
@@ -364,7 +367,7 @@ main {
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center; }
     .services__service-title {
       line-height: 32px;
@@ -372,8 +375,8 @@ main {
       text-align: center; }
       @media (min-width: 576px) {
         .services__service-title {
-          font-size: 20px;
-          line-height: 48px; } }
+          font-size: 16px;
+          line-height: 32px; } }
       @media (min-width: 1024px) {
         .services__service-title {
           font-size: 22px;
@@ -388,8 +391,6 @@ main {
       @media (min-width: 1024px) {
         .services__service-item {
           font-size: 16px; } }
-    .services__service-list {
-      list-style: none; }
     .services__service-price {
       line-height: 32px;
       font-size: 12px;
@@ -397,19 +398,23 @@ main {
       font-weight: bold; }
       @media (min-width: 576px) {
         .services__service-price {
-          font-size: 20px;
-          line-height: 48px; } }
+          font-size: 16px;
+          line-height: 32px; } }
       @media (min-width: 1024px) {
         .services__service-price {
           font-size: 22px;
           line-height: 48px; } }
     .services__service-logo {
       width: 50%;
-      height: 50%;
-      margin-bottom: 15%;
+      margin-bottom: 20px;
       border: 3px solid #2589FF;
       background-color: #000;
       border-radius: 50%; }
+    .services__service-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
 
 .about {
   padding-inline: 20px;
@@ -527,6 +532,7 @@ main {
     background-color: #d0e5ff;
     border-radius: 24px; }
     .faq__content-title {
+      text-align: center;
       line-height: 18px;
       font-size: 12px;
       margin-top: 5%;
