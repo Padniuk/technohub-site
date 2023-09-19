@@ -20,6 +20,7 @@ class Worker(models.Model):
     name = models.CharField(max_length=255)
     phone = models.CharField(max_length=20)
     user_id = models.CharField(max_length=50)
+    blocked = models.BooleanField(default=False)
     additional_info = models.TextField(blank=True, null=True)
     
     applications = models.ManyToManyField('Application', through='ApplicationWorkerAssociation')
