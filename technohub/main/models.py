@@ -8,6 +8,7 @@ class Application(models.Model):
     problem = models.TextField(blank=True, null=True)
     address = models.CharField(max_length=50)
     post_time = models.DateTimeField(default=timezone.now)
+    take_time = models.DateTimeField(null=True)
     complete_time = models.DateTimeField(null=True)
     message_id = models.CharField(max_length=50)
     price = models.IntegerField(default=0)
